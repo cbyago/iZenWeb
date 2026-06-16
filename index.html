@@ -21,7 +21,13 @@
       --text-secondary: rgba(0, 0, 0, 0.55);
       --text-muted: rgba(0, 0, 0, 0.35);
       --gold: rgb(184, 135, 10);
+      --gold-hover: rgb(160, 117, 8);
       --spacing: 0.03em;
+      --card-bg: rgba(255, 255, 255, 0.72);
+      --card-border: rgba(255, 255, 255, 0.9);
+      --input-bg: rgba(255, 255, 255, 0.6);
+      --input-border: rgba(0, 0, 0, 0.10);
+      --input-border-focus: rgba(184, 135, 10, 0.50);
     }
 
     html {
@@ -37,11 +43,7 @@
       min-height: 100vh;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    /* ── Hero ─────────────────────────────────────────── */
 
     .hero {
       min-height: 100svh;
@@ -50,76 +52,101 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 48px 24px;
-      gap: 0;
+      padding: 64px 24px 80px;
+      position: relative;
     }
 
     .hero-lotus {
-      font-size: 4rem;
+      font-size: 3.6rem;
       line-height: 1;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       display: block;
     }
 
     .hero-name {
-      font-size: clamp(2.2rem, 6vw, 3rem);
+      font-size: clamp(2.4rem, 6vw, 3.2rem);
       font-weight: 200;
       letter-spacing: 0.15em;
       color: var(--text-primary);
       line-height: 1;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .hero-tagline {
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 300;
       font-style: italic;
       letter-spacing: var(--spacing);
       color: var(--text-muted);
-      margin-bottom: 44px;
+      margin-bottom: 36px;
     }
 
-    .badge-link {
-      display: inline-block;
-      transition: opacity 0.2s ease;
-    }
+    /* ── Beta badge ───────────────────────────────────── */
 
-    .badge-link:hover {
-      opacity: 0.75;
-    }
-
-    .badge-link img {
-      height: 44px;
-      width: auto;
-      display: block;
-    }
-
-    .badge-pill {
+    .beta-badge {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      background: var(--gold);
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 400;
-      letter-spacing: 0.06em;
+      gap: 6px;
+      font-size: 0.675rem;
+      font-weight: 500;
+      letter-spacing: 0.10em;
       text-transform: uppercase;
-      text-decoration: none;
-      padding: 12px 24px;
+      color: var(--gold);
+      background: rgba(184, 135, 10, 0.10);
+      border: 1px solid rgba(184, 135, 10, 0.22);
+      padding: 5px 12px;
       border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .beta-badge::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 2.4s ease infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    /* ── Scroll CTA ───────────────────────────────────── */
+
+    .scroll-cta {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       transition: opacity 0.2s ease;
     }
 
-    .badge-pill:hover {
-      opacity: 0.85;
+    .scroll-cta:hover {
+      opacity: 0.6;
     }
 
-    .badge-pill svg {
-      flex-shrink: 0;
+    .scroll-cta svg {
+      animation: bounce 2s ease infinite;
     }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(4px); }
+    }
+
+    /* ── App preview ──────────────────────────────────── */
 
     .app-preview {
-      padding: 60px 24px 40px;
+      padding: 80px 24px 60px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -138,6 +165,8 @@
       width: 100%;
       height: auto;
     }
+
+    /* ── Features ─────────────────────────────────────── */
 
     .features {
       padding: 80px 24px;
@@ -179,6 +208,220 @@
       color: var(--text-muted);
     }
 
+    /* ── Beta signup section ──────────────────────────── */
+
+    .beta-section {
+      padding: 80px 24px 88px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .beta-section-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .beta-section-headline {
+      font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+      font-weight: 200;
+      letter-spacing: 0.04em;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .beta-section-sub {
+      font-size: 0.9rem;
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: var(--spacing);
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      max-width: 360px;
+      line-height: 1.6;
+    }
+
+    /* ── Form card ────────────────────────────────────── */
+
+    .beta-card {
+      width: 100%;
+      max-width: 400px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 22px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow:
+        0 2px 0 0 rgba(255,255,255,0.80) inset,
+        0 24px 56px rgba(0,0,0,0.10),
+        0 4px 12px rgba(0,0,0,0.06);
+      padding: 32px 28px 28px;
+      text-align: left;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--text-secondary);
+      padding-left: 2px;
+    }
+
+    .form-group input {
+      width: 100%;
+      height: 44px;
+      padding: 0 14px;
+      background: var(--input-bg);
+      border: 1px solid var(--input-border);
+      border-radius: 11px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      -webkit-appearance: none;
+    }
+
+    .form-group input::placeholder {
+      color: rgba(0,0,0,0.28);
+    }
+
+    .form-group input:focus {
+      border-color: var(--input-border-focus);
+      background: rgba(255,255,255,0.85);
+      box-shadow: 0 0 0 3px rgba(184, 135, 10, 0.10);
+    }
+
+    .form-group.full {
+      margin-bottom: 10px;
+    }
+
+    .submit-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      height: 48px;
+      margin-top: 16px;
+      background: var(--gold);
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.025em;
+      border: none;
+      border-radius: 13px;
+      cursor: pointer;
+      transition: background 0.18s ease, transform 0.12s ease, opacity 0.18s ease;
+      -webkit-appearance: none;
+    }
+
+    .submit-btn:hover {
+      background: var(--gold-hover);
+    }
+
+    .submit-btn:active {
+      transform: scale(0.98);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+
+    .submit-btn .btn-spinner {
+      display: none;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+
+    .submit-btn.loading .btn-text { display: none; }
+    .submit-btn.loading .btn-spinner { display: block; }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .card-note {
+      font-size: 0.72rem;
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: var(--spacing);
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+
+    /* ── Success state ────────────────────────────────── */
+
+    .success-state {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+      padding: 12px 0 4px;
+    }
+
+    .success-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(184, 135, 10, 0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 4px;
+    }
+
+    .success-headline {
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: var(--spacing);
+      color: var(--text-primary);
+    }
+
+    .success-body {
+      font-size: 0.82rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.6;
+      letter-spacing: var(--spacing);
+      color: var(--text-muted);
+      max-width: 280px;
+    }
+
+    .beta-card.submitted .form-content { display: none; }
+    .beta-card.submitted .success-state { display: flex; }
+
+    /* ── Tip ──────────────────────────────────────────── */
 
     .tip {
       padding: 80px 24px;
@@ -213,6 +456,8 @@
       max-width: 480px;
     }
 
+    /* ── Footer ───────────────────────────────────────── */
+
     .footer {
       padding: 32px 24px 40px;
       text-align: center;
@@ -244,44 +489,59 @@
       margin: 0 auto;
     }
 
+    /* ── Responsive ───────────────────────────────────── */
+
     @media (max-width: 640px) {
       .features-grid {
         grid-template-columns: 1fr;
         gap: 40px;
+      }
+
+      .beta-card {
+        padding: 28px 20px 24px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .form-row {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- 1. Hero — hook -->
   <section class="hero">
     <span class="hero-lotus" role="img" aria-label="lotus">🪷</span>
+    <span class="beta-badge">Private Beta · TestFlight</span>
     <h1 class="hero-name">iZen</h1>
     <p class="hero-tagline">A Buddhist quote, every day.</p>
 
-    <a class="badge-link" href="#" aria-label="Download on the App Store">
-      <img
-        src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-        alt="Download on the App Store"
-        onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.display='inline-flex';"
-      >
-    </a>
-    <a class="badge-pill" href="#" style="display:none;" aria-label="Download on the App Store">
+    <a class="scroll-cta" href="#preview" aria-label="See the app">
+      <span>See the app</span>
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-        <path d="M11.182 4.636C11.182 3.181 10.273 2 8.727 2 7.272 2 5.818 3.272 5.818 4.636c0 .636.273 1.273.727 1.818H4.364C3.636 6.454 3 7.09 3 7.818v1.364c0 .363.273.636.636.636H3.91v3.364c0 .727.636 1.363 1.363 1.363h5.455c.727 0 1.363-.636 1.363-1.363V9.818h.273c.363 0 .636-.273.636-.636V7.818c0-.727-.636-1.364-1.363-1.364h-2.09c.454-.545.636-1.181.636-1.818z" fill="currentColor"/>
+        <path d="M8 3v10M3 9l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      App Store
     </a>
   </section>
 
-  <section class="app-preview" aria-label="App preview">
+  <!-- 2. App preview — create desire -->
+  <section class="app-preview" id="preview" aria-label="App preview">
     <div class="trio-wrap">
       <img src="Trio.png" alt="iZen app on home screen, lock screen and inside the app" loading="lazy">
     </div>
+    <a class="scroll-cta" href="#beta" aria-label="Register for beta" style="margin-top: 40px;">
+      <span>Register for beta</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M8 3v10M3 9l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
   </section>
 
   <div class="divider"></div>
 
+  <!-- 3. Features — rational justification -->
   <section class="features" aria-label="Features">
     <div class="features-grid">
 
@@ -308,15 +568,156 @@
 
   <div class="divider"></div>
 
+  <!-- 4. Beta signup — conversion -->
+  <section class="beta-section" id="beta" aria-label="Join the beta">
+    <p class="beta-section-eyebrow">Early access</p>
+    <h2 class="beta-section-headline">Ready to experience it?</h2>
+    <p class="beta-section-sub">Leave your details and we'll send you a TestFlight invitation as soon as a spot opens.</p>
+
+    <div class="beta-card" id="betaCard">
+
+      <div class="form-content">
+        <form id="betaForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First name</label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder="Maria"
+                autocomplete="given-name"
+                required
+              >
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last name</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="Silva"
+                autocomplete="family-name"
+                required
+              >
+            </div>
+          </div>
+
+          <div class="form-group full">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <input type="checkbox" name="botcheck" style="display:none">
+
+          <button type="submit" class="submit-btn" id="submitBtn">
+            <span class="btn-text">Request access</span>
+            <span class="btn-spinner" aria-hidden="true"></span>
+          </button>
+        </form>
+
+        <p class="card-note">You'll receive a TestFlight invitation at the email above.</p>
+      </div>
+
+      <div class="success-state" aria-live="polite">
+        <div class="success-icon" role="img" aria-label="success">🪷</div>
+        <p class="success-headline">You're on the list.</p>
+        <p class="success-body">We'll send your TestFlight invitation as soon as a spot opens. Thank you for your interest.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. Support -->
+  <div class="divider"></div>
+
   <section class="tip" aria-label="Support">
     <span class="tip-lotus" role="img" aria-label="lotus">🪷</span>
     <p class="tip-headline">Made with intention, offered freely.</p>
-    <p class="tip-body">If iZen brings value to your practice, a small offering helps keep the flame alive. Download the app and support!</p>
+    <p class="tip-body">If iZen brings value to your practice, a small offering helps keep the flame alive.</p>
   </section>
 
   <footer class="footer">
     <p>© 2026 iZen · No data collected · <a href="https://cbyago.github.io/iZenWeb/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a></p>
   </footer>
+
+  <script>
+    function smoothScrollTo(targetId) {
+      const target   = document.getElementById(targetId);
+      const start    = window.scrollY;
+      const end      = target.getBoundingClientRect().top + window.scrollY;
+      const distance = end - start;
+      const duration = 1100;
+      let startTime  = null;
+
+      function ease(t) {
+        return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
+      }
+
+      function step(ts) {
+        if (!startTime) startTime = ts;
+        const progress = Math.min((ts - startTime) / duration, 1);
+        window.scrollTo(0, start + distance * ease(progress));
+        if (progress < 1) requestAnimationFrame(step);
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    document.querySelectorAll('.scroll-cta').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        smoothScrollTo(this.getAttribute('href').slice(1));
+      });
+    });
+
+    const form      = document.getElementById("betaForm");
+    const card      = document.getElementById("betaCard");
+    const submitBtn = document.getElementById("submitBtn");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const firstName = form.firstName.value.trim();
+      const lastName  = form.lastName.value.trim();
+      const email     = form.email.value.trim();
+
+      if (!firstName || !lastName || !email) return;
+
+      submitBtn.disabled = true;
+      submitBtn.classList.add("loading");
+
+      try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({
+            access_key: "1d2ec1c0-ecf9-48bc-b2d9-aed4bf85274f",
+            subject: "iZen Beta — novo pedido de acesso",
+            from_name: "iZen Website",
+            firstName,
+            lastName,
+            email,
+          }),
+        });
+
+        if (!res.ok) throw new Error("Network error");
+
+        card.classList.add("submitted");
+      } catch {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove("loading");
+        alert("Something went wrong. Please try again.");
+      }
+    });
+  </script>
 
 </body>
 </html>
