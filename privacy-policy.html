@@ -115,64 +115,64 @@
 
   <main>
     <div class="hero">
-      <h2>Privacy Policy</h2>
-      <p>Last updated: May 2026</p>
+      <h2 data-i18n="hero-h2">Privacy Policy</h2>
+      <p data-i18n="last-updated">Last updated: May 2026</p>
     </div>
 
     <section>
-      <h3>About the app</h3>
-      <p>
+      <h3 data-i18n="s1-h3">About the app</h3>
+      <p data-i18n="s1-p">
         iZen is a well-being app that displays Dharma quotes — Buddhist teachings and reflections to inspire presence, clarity, and peace in everyday life. Our purpose is simple: to carry these words forward.
       </p>
     </section>
 
     <section>
-      <h3>Data collected</h3>
-      <p>iZen <strong>does not collect, store, process, or share any personal data</strong> from its users.</p>
+      <h3 data-i18n="s2-h3">Data collected</h3>
+      <p data-i18n-html="s2-p">iZen <strong>does not collect, store, process, or share any personal data</strong> from its users.</p>
       <div class="badge">
-        <strong>No data collected</strong>
-        We do not request your name, email, location, device identifiers, usage data, or any other personal information.
+        <strong data-i18n="badge-title">No data collected</strong>
+        <span data-i18n="badge-body">We do not request your name, email, location, device identifiers, usage data, or any other personal information.</span>
       </div>
     </section>
 
     <section>
-      <h3>Analytics and tracking</h3>
-      <p>
+      <h3 data-i18n="s3-h3">Analytics and tracking</h3>
+      <p data-i18n="s3-p">
         The app does not use analytics tools, third-party tracking SDKs, cookies, or any behavioral monitoring technology.
       </p>
     </section>
 
     <section>
-      <h3>Advertising</h3>
-      <p>
+      <h3 data-i18n="s4-h3">Advertising</h3>
+      <p data-i18n="s4-p">
         iZen does not display ads and does not share data with advertising networks.
       </p>
     </section>
 
     <section>
-      <h3>Purchases and payments</h3>
-      <p>
-      If the user wants to support the application, all transactions will be processed exclusively by Apple through StoreKit. iZen does not have access to financial or credit card data.
+      <h3 data-i18n="s5-h3">Purchases and payments</h3>
+      <p data-i18n="s5-p">
+        If the user wants to support the application, all transactions will be processed exclusively by Apple through StoreKit. iZen does not have access to financial or credit card data.
       </p>
     </section>
 
     <section>
-      <h3>Compliance with Brazilian LGPD</h3>
-      <p>
+      <h3 data-i18n="s6-h3">Compliance with Brazilian LGPD</h3>
+      <p data-i18n="s6-p">
         Since no personal data is collected, iZen operates in full compliance with Brazil's General Data Protection Law (Lei nº 13.709/2018). There is no legal basis for data processing to declare, as no data is processed.
       </p>
     </section>
 
     <section>
-      <h3>Compliance with Apple guidelines</h3>
-      <p>
+      <h3 data-i18n="s7-h3">Compliance with Apple guidelines</h3>
+      <p data-i18n="s7-p">
         iZen complies with App Store privacy policies, including App Tracking Transparency (ATT) requirements. The app does not track users.
       </p>
     </section>
 
     <section>
-      <h3>Contact</h3>
-      <p>
+      <h3 data-i18n="s8-h3">Contact</h3>
+      <p data-i18n-html="s8-p">
         Questions about this policy? Get in touch:<br />
         <a href="mailto:obokaysoftware@gmail.com" style="color:#0a84ff;">obokaysoftware@gmail.com</a>
       </p>
@@ -180,8 +180,53 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 iZen. All rights reserved.</p>
+    <p data-i18n="footer">&copy; 2026 iZen. All rights reserved.</p>
   </footer>
+
+  <script>
+    (function () {
+      var lang = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
+      if (!lang.toLowerCase().startsWith('pt')) return;
+
+      document.documentElement.lang = 'pt-BR';
+
+      var t = {
+        'page-title':   'Política de Privacidade — iZen',
+        'hero-h2':      'Política de Privacidade',
+        'last-updated': 'Última atualização: maio de 2026',
+        's1-h3': 'Sobre o aplicativo',
+        's1-p':  'iZen é um aplicativo de bem-estar que exibe citações do Dharma — ensinamentos e reflexões budistas para inspirar presença, clareza e paz na vida cotidiana. Nosso propósito é simples: levar essas palavras adiante.',
+        's2-h3': 'Dados coletados',
+        's2-p':  'iZen <strong>não coleta, armazena, processa ou compartilha nenhum dado pessoal</strong> de seus usuários.',
+        'badge-title': 'Nenhum dado coletado',
+        'badge-body':  'Não solicitamos seu nome, e-mail, localização, identificadores de dispositivo, dados de uso ou qualquer outra informação pessoal.',
+        's3-h3': 'Análises e rastreamento',
+        's3-p':  'O aplicativo não utiliza ferramentas de análise, SDKs de rastreamento de terceiros, cookies ou qualquer tecnologia de monitoramento comportamental.',
+        's4-h3': 'Publicidade',
+        's4-p':  'iZen não exibe anúncios e não compartilha dados com redes de publicidade.',
+        's5-h3': 'Compras e pagamentos',
+        's5-p':  'Se o usuário deseja apoiar o aplicativo, todas as transações serão processadas exclusivamente pela Apple por meio do StoreKit. O iZen não tem acesso a dados financeiros ou de cartão de crédito.',
+        's6-h3': 'Conformidade com a LGPD',
+        's6-p':  'Como nenhum dado pessoal é coletado, o iZen opera em total conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018). Não há base legal de tratamento de dados a declarar, pois nenhum dado é tratado.',
+        's7-h3': 'Conformidade com as diretrizes da Apple',
+        's7-p':  'O iZen está em conformidade com as políticas de privacidade da App Store, incluindo os requisitos de App Tracking Transparency (ATT). O aplicativo não rastreia usuários.',
+        's8-h3': 'Contato',
+        's8-p':  'Dúvidas sobre esta política? Entre em contato:<br /><a href="mailto:obokaysoftware@gmail.com" style="color:#0a84ff;">obokaysoftware@gmail.com</a>',
+        'footer': '© 2026 iZen. Todos os direitos reservados.',
+      };
+
+      document.title = t['page-title'];
+
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.textContent = t[key];
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-html');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+    })();
+  </script>
 
 </body>
 </html>

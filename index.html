@@ -514,12 +514,12 @@
   <!-- 1. Hero — hook -->
   <section class="hero">
     <span class="hero-lotus" role="img" aria-label="lotus">🪷</span>
-    <span class="beta-badge">Private Beta · TestFlight</span>
+    <span class="beta-badge" data-i18n="beta-badge">Private Beta · TestFlight</span>
     <h1 class="hero-name">iZen</h1>
-    <p class="hero-tagline">A Buddhist quote, every day.</p>
+    <p class="hero-tagline" data-i18n="hero-tagline">A Buddhist quote, every day.</p>
 
     <a class="scroll-cta" href="#preview" aria-label="See the app">
-      <span>See the app</span>
+      <span data-i18n="scroll-cta-preview">See the app</span>
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
         <path d="M8 3v10M3 9l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -532,7 +532,7 @@
       <img src="Trio.png" alt="iZen app on home screen, lock screen and inside the app" loading="lazy">
     </div>
     <a class="scroll-cta" href="#beta" aria-label="Register for beta" style="margin-top: 40px;">
-      <span>Register for beta</span>
+      <span data-i18n="scroll-cta-beta">Register for beta</span>
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
         <path d="M8 3v10M3 9l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -547,20 +547,20 @@
 
       <div class="feature">
         <span class="feature-emoji" role="img" aria-label="calendar">🗓️</span>
-        <h2 class="feature-title">One quote per day</h2>
-        <p class="feature-body">A new teaching each morning. Swipe back to revisit any day this year.</p>
+        <h2 class="feature-title" data-i18n="feature-1-title">One quote per day</h2>
+        <p class="feature-body" data-i18n="feature-1-body">A new teaching each morning. Swipe back to revisit any day this year.</p>
       </div>
 
       <div class="feature">
         <span class="feature-emoji" role="img" aria-label="phone">📱</span>
-        <h2 class="feature-title">Home &amp; lock screen widgets</h2>
-        <p class="feature-body">The quote follows you — small, medium, large, or right on your lock screen.</p>
+        <h2 class="feature-title" data-i18n="feature-2-title">Home &amp; lock screen widgets</h2>
+        <p class="feature-body" data-i18n="feature-2-body">The quote follows you — small, medium, large, or right on your lock screen.</p>
       </div>
 
       <div class="feature">
         <span class="feature-emoji" role="img" aria-label="lock">🔒</span>
-        <h2 class="feature-title">No account. No tracking.</h2>
-        <p class="feature-body">No data collected. No subscriptions. Offered freely.</p>
+        <h2 class="feature-title" data-i18n="feature-3-title">No account. No tracking.</h2>
+        <p class="feature-body" data-i18n="feature-3-body">No data collected. No subscriptions. Offered freely.</p>
       </div>
 
     </div>
@@ -570,9 +570,9 @@
 
   <!-- 4. Beta signup — conversion -->
   <section class="beta-section" id="beta" aria-label="Join the beta">
-    <p class="beta-section-eyebrow">Early access</p>
-    <h2 class="beta-section-headline">Ready to experience it?</h2>
-    <p class="beta-section-sub">Leave your details and we'll send you a TestFlight invitation as soon as a spot opens.</p>
+    <p class="beta-section-eyebrow" data-i18n="eyebrow">Early access</p>
+    <h2 class="beta-section-headline" data-i18n="headline">Ready to experience it?</h2>
+    <p class="beta-section-sub" data-i18n="sub">Leave your details and we'll send you a TestFlight invitation as soon as a spot opens.</p>
 
     <div class="beta-card" id="betaCard">
 
@@ -580,23 +580,25 @@
         <form id="betaForm" novalidate>
           <div class="form-row">
             <div class="form-group">
-              <label for="firstName">First name</label>
+              <label for="firstName" data-i18n="label-firstname">First name</label>
               <input
                 type="text"
                 id="firstName"
                 name="firstName"
                 placeholder="Maria"
+                data-i18n-placeholder="ph-firstname"
                 autocomplete="given-name"
                 required
               >
             </div>
             <div class="form-group">
-              <label for="lastName">Last name</label>
+              <label for="lastName" data-i18n="label-lastname">Last name</label>
               <input
                 type="text"
                 id="lastName"
                 name="lastName"
                 placeholder="Silva"
+                data-i18n-placeholder="ph-lastname"
                 autocomplete="family-name"
                 required
               >
@@ -604,12 +606,13 @@
           </div>
 
           <div class="form-group full">
-            <label for="email">Email</label>
+            <label for="email" data-i18n="label-email">Email</label>
             <input
               type="email"
               id="email"
               name="email"
               placeholder="you@example.com"
+              data-i18n-placeholder="ph-email"
               autocomplete="email"
               required
             >
@@ -618,18 +621,18 @@
           <input type="checkbox" name="botcheck" style="display:none">
 
           <button type="submit" class="submit-btn" id="submitBtn">
-            <span class="btn-text">Request access</span>
+            <span class="btn-text" data-i18n="submit-btn">Request access</span>
             <span class="btn-spinner" aria-hidden="true"></span>
           </button>
         </form>
 
-        <p class="card-note">You'll receive a TestFlight invitation at the email above.</p>
+        <p class="card-note" data-i18n="card-note">You'll receive a TestFlight invitation at the email above.</p>
       </div>
 
       <div class="success-state" aria-live="polite">
         <div class="success-icon" role="img" aria-label="success">🪷</div>
-        <p class="success-headline">You're on the list.</p>
-        <p class="success-body">We'll send your TestFlight invitation as soon as a spot opens. Thank you for your interest.</p>
+        <p class="success-headline" data-i18n="success-headline">You're on the list.</p>
+        <p class="success-body" data-i18n="success-body">We'll send your TestFlight invitation as soon as a spot opens. Thank you for your interest.</p>
       </div>
 
     </div>
@@ -640,15 +643,72 @@
 
   <section class="tip" aria-label="Support">
     <span class="tip-lotus" role="img" aria-label="lotus">🪷</span>
-    <p class="tip-headline">Made with intention, offered freely.</p>
-    <p class="tip-body">If iZen brings value to your practice, a small offering helps keep the flame alive.</p>
+    <p class="tip-headline" data-i18n="tip-headline">Made with intention, offered freely.</p>
+    <p class="tip-body" data-i18n="tip-body">If iZen brings value to your practice, a small offering helps keep the flame alive.</p>
   </section>
 
   <footer class="footer">
-    <p>© 2026 iZen · No data collected · <a href="https://izenquotes.com/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a></p>
+    <p data-i18n-html="footer-html">© 2026 iZen · No data collected · <a href="https://izenquotes.com/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a></p>
   </footer>
 
   <script>
+    (function () {
+      var lang = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
+      if (!lang.toLowerCase().startsWith('pt')) return;
+
+      document.documentElement.lang = 'pt-BR';
+
+      window._i18n = { errorAlert: 'Algo deu errado. Tente novamente.' };
+
+      var t = {
+        'page-title':       'iZen — Uma citação budista, todo dia.',
+        'meta-description': 'Um novo ensinamento budista a cada manhã. Widgets para a tela inicial, sem conta, sem rastreamento.',
+        'beta-badge':       'Beta Privado · TestFlight',
+        'hero-tagline':     'Uma citação budista, todo dia.',
+        'scroll-cta-preview': 'Ver o app',
+        'scroll-cta-beta':    'Registrar para o beta',
+        'feature-1-title':  'Uma citação por dia',
+        'feature-1-body':   'Um novo ensinamento a cada manhã. Deslize para revisitar qualquer dia do ano.',
+        'feature-2-title':  'Widgets de tela inicial e de bloqueio',
+        'feature-2-body':   'A citação te acompanha — pequena, média, grande, ou direto na tela de bloqueio.',
+        'feature-3-title':  'Sem conta. Sem rastreamento.',
+        'feature-3-body':   'Nenhum dado coletado. Sem assinaturas. Oferecido gratuitamente.',
+        'eyebrow':          'Acesso antecipado',
+        'headline':         'Pronto para experimentar?',
+        'sub':              'Deixe seus dados e enviaremos um convite TestFlight assim que uma vaga abrir.',
+        'label-firstname':  'Nome',
+        'label-lastname':   'Sobrenome',
+        'label-email':      'E-mail',
+        'ph-firstname':     'Maria',
+        'ph-lastname':      'Silva',
+        'ph-email':         'voce@exemplo.com',
+        'submit-btn':       'Solicitar acesso',
+        'card-note':        'Você receberá um convite TestFlight no e-mail acima.',
+        'success-headline': 'Você está na lista.',
+        'success-body':     'Enviaremos seu convite TestFlight assim que uma vaga abrir. Obrigado pelo interesse.',
+        'tip-headline':     'Feito com intenção, oferecido livremente.',
+        'tip-body':         'Se o iZen traz valor à sua prática, uma pequena oferta ajuda a manter a chama acesa.',
+        'footer-html':      '© 2026 iZen · Nenhum dado coletado · <a href="https://izenquotes.com/privacy-policy.html" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>',
+      };
+
+      document.title = t['page-title'];
+      var metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.content = t['meta-description'];
+
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.textContent = t[key];
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-html');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-placeholder');
+        if (t[key] !== undefined) el.placeholder = t[key];
+      });
+    })();
+
     function smoothScrollTo(targetId) {
       const target   = document.getElementById(targetId);
       const start    = window.scrollY;
@@ -714,7 +774,7 @@
       } catch {
         submitBtn.disabled = false;
         submitBtn.classList.remove("loading");
-        alert("Something went wrong. Please try again.");
+        alert((window._i18n && window._i18n.errorAlert) || "Something went wrong. Please try again.");
       }
     });
   </script>
