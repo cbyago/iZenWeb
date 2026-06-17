@@ -57,10 +57,11 @@
     }
 
     .hero-lotus {
-      font-size: 3.6rem;
-      line-height: 1;
+      width: 3.6rem;
+      height: 3.6rem;
       margin-bottom: 24px;
       display: block;
+      color: var(--gold);
     }
 
     .hero-name {
@@ -183,13 +184,20 @@
     .feature {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 12px;
       text-align: center;
     }
 
+    .features-grid > .scroll-cta {
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
+
     .feature-emoji {
-      font-size: 1.6rem;
-      line-height: 1;
+      width: 1.6rem;
+      height: 1.6rem;
+      color: var(--gold);
     }
 
     .feature-title {
@@ -397,8 +405,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
       margin-bottom: 4px;
+      color: var(--gold);
+    }
+
+    .success-icon svg {
+      width: 1.4rem;
+      height: 1.4rem;
     }
 
     .success-headline {
@@ -432,9 +445,10 @@
     }
 
     .tip-lotus {
-      font-size: 2rem;
-      line-height: 1;
+      width: 2rem;
+      height: 2rem;
       margin-bottom: 24px;
+      color: var(--gold);
     }
 
     .tip-headline {
@@ -511,9 +525,14 @@
 </head>
 <body>
 
-  <!-- 1. Hero — hook -->
   <section class="hero">
-    <span class="hero-lotus" role="img" aria-label="lotus">🪷</span>
+    <svg class="hero-lotus" role="img" aria-label="lotus" viewBox="0 0 24 24" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19 C10.4 14.3 10.4 8.3 12 4 C13.6 8.3 13.6 14.3 12 19 Z"/>
+      <path d="M12 19 C10.4 14.3 10.4 8.3 12 4 C13.6 8.3 13.6 14.3 12 19 Z" transform="rotate(-24 12 19)"/>
+      <path d="M12 19 C10.4 14.3 10.4 8.3 12 4 C13.6 8.3 13.6 14.3 12 19 Z" transform="rotate(24 12 19)"/>
+      <path d="M12 19 C10.8 15.5 10.8 11.5 12 8.5 C13.2 11.5 13.2 15.5 12 19 Z" transform="rotate(-47 12 19)"/>
+      <path d="M12 19 C10.8 15.5 10.8 11.5 12 8.5 C13.2 11.5 13.2 15.5 12 19 Z" transform="rotate(47 12 19)"/>
+    </svg>
     <span class="beta-badge" data-i18n="beta-badge">Private Beta · TestFlight</span>
     <h1 class="hero-name">iZen</h1>
     <p class="hero-tagline" data-i18n="hero-tagline">A Buddhist quote, every day.</p>
@@ -526,49 +545,61 @@
     </a>
   </section>
 
-  <!-- 2. App preview — create desire -->
   <section class="app-preview" id="preview" aria-label="App preview">
     <div class="trio-wrap">
       <img src="Trio.png" alt="iZen app on home screen, lock screen and inside the app" loading="lazy">
     </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="features" aria-label="Features">
+    <div class="features-grid">
+
+      <div class="feature">
+        <svg class="feature-emoji" role="img" aria-label="calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3.5" y="5" width="17" height="15" rx="2.5"/>
+          <line x1="3.5" y1="9.5" x2="20.5" y2="9.5"/>
+          <line x1="8" y1="3" x2="8" y2="7"/>
+          <line x1="16" y1="3" x2="16" y2="7"/>
+          <circle cx="12" cy="14.5" r="1.4" fill="currentColor" stroke="none"/>
+        </svg>
+        <h2 class="feature-title" data-i18n="feature-1-title">One quote per day</h2>
+        <p class="feature-body" data-i18n="feature-1-body">A new teaching each morning. Swipe back to revisit any day this year.</p>
+      </div>
+
+      <div class="feature">
+        <svg class="feature-emoji" role="img" aria-label="phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="6" y="2.5" width="12" height="19" rx="3"/>
+          <line x1="10" y1="19" x2="14" y2="19"/>
+          <rect x="8.5" y="6" width="7" height="5" rx="1.2" fill="currentColor" fill-opacity="0.12"/>
+        </svg>
+        <h2 class="feature-title" data-i18n="feature-2-title">Home &amp; lock screen widgets</h2>
+        <p class="feature-body" data-i18n="feature-2-body">The quote follows you — small, medium, large, or right on your lock screen.</p>
+      </div>
+
+      <div class="feature">
+        <svg class="feature-emoji" role="img" aria-label="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="11" width="14" height="10" rx="2.5"/>
+          <path d="M8 11V7.5a4 4 0 0 1 8 0V11"/>
+          <circle cx="12" cy="16" r="1.3" fill="currentColor" stroke="none"/>
+        </svg>
+        <h2 class="feature-title" data-i18n="feature-3-title">No account. No tracking.</h2>
+        <p class="feature-body" data-i18n="feature-3-body">No data collected. No subscriptions. Offered freely.</p>
+      </div>
+
     <a class="scroll-cta" href="#beta" aria-label="Register for beta" style="margin-top: 40px;">
       <span data-i18n="scroll-cta-beta">Register for beta</span>
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
         <path d="M8 3v10M3 9l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </a>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- 3. Features — rational justification -->
-  <section class="features" aria-label="Features">
-    <div class="features-grid">
-
-      <div class="feature">
-        <span class="feature-emoji" role="img" aria-label="calendar">🗓️</span>
-        <h2 class="feature-title" data-i18n="feature-1-title">One quote per day</h2>
-        <p class="feature-body" data-i18n="feature-1-body">A new teaching each morning. Swipe back to revisit any day this year.</p>
-      </div>
-
-      <div class="feature">
-        <span class="feature-emoji" role="img" aria-label="phone">📱</span>
-        <h2 class="feature-title" data-i18n="feature-2-title">Home &amp; lock screen widgets</h2>
-        <p class="feature-body" data-i18n="feature-2-body">The quote follows you — small, medium, large, or right on your lock screen.</p>
-      </div>
-
-      <div class="feature">
-        <span class="feature-emoji" role="img" aria-label="lock">🔒</span>
-        <h2 class="feature-title" data-i18n="feature-3-title">No account. No tracking.</h2>
-        <p class="feature-body" data-i18n="feature-3-body">No data collected. No subscriptions. Offered freely.</p>
-      </div>
 
     </div>
   </section>
 
   <div class="divider"></div>
 
-  <!-- 4. Beta signup — conversion -->
   <section class="beta-section" id="beta" aria-label="Join the beta">
     <p class="beta-section-eyebrow" data-i18n="eyebrow">Early access</p>
     <h2 class="beta-section-headline" data-i18n="headline">Ready to experience it?</h2>
@@ -630,7 +661,15 @@
       </div>
 
       <div class="success-state" aria-live="polite">
-        <div class="success-icon" role="img" aria-label="success">🪷</div>
+        <div class="success-icon" role="img" aria-label="success">
+        <svg viewBox="0 0 24 24" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 19 C10.4 14.3 10.4 8.3 12 4 C13.6 8.3 13.6 14.3 12 19 Z"/>
+          <path d="M12 19 C10.4 14.3 10.4 8.3 12 4 C13.6 8.3 13.6 14.3 12 19 Z" transform="rotate(-24 12 19)"/>
+          <path d="M12 19 C10.4 14.3 10.4 8.3 12 4 C13.6 8.3 13.6 14.3 12 19 Z" transform="rotate(24 12 19)"/>
+          <path d="M12 19 C10.8 15.5 10.8 11.5 12 8.5 C13.2 11.5 13.2 15.5 12 19 Z" transform="rotate(-47 12 19)"/>
+          <path d="M12 19 C10.8 15.5 10.8 11.5 12 8.5 C13.2 11.5 13.2 15.5 12 19 Z" transform="rotate(47 12 19)"/>
+        </svg>
+      </div>
         <p class="success-headline" data-i18n="success-headline">You're on the list.</p>
         <p class="success-body" data-i18n="success-body">We'll send your TestFlight invitation as soon as a spot opens. Thank you for your interest.</p>
       </div>
@@ -642,7 +681,13 @@
   <div class="divider"></div>
 
   <section class="tip" aria-label="Support">
-    <span class="tip-lotus" role="img" aria-label="lotus">🪷</span>
+    <svg class="tip-lotus" role="img" aria-label="lotus" viewBox="0 0 24 24" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19 C10.4 14.3 10.4 8.3 12 4 C13.6 8.3 13.6 14.3 12 19 Z"/>
+      <path d="M12 19 C10.4 14.3 10.4 8.3 12 4 C13.6 8.3 13.6 14.3 12 19 Z" transform="rotate(-24 12 19)"/>
+      <path d="M12 19 C10.4 14.3 10.4 8.3 12 4 C13.6 8.3 13.6 14.3 12 19 Z" transform="rotate(24 12 19)"/>
+      <path d="M12 19 C10.8 15.5 10.8 11.5 12 8.5 C13.2 11.5 13.2 15.5 12 19 Z" transform="rotate(-47 12 19)"/>
+      <path d="M12 19 C10.8 15.5 10.8 11.5 12 8.5 C13.2 11.5 13.2 15.5 12 19 Z" transform="rotate(47 12 19)"/>
+    </svg>
     <p class="tip-headline" data-i18n="tip-headline">Made with intention, offered freely.</p>
     <p class="tip-body" data-i18n="tip-body">If iZen brings value to your practice, a small offering helps keep the flame alive.</p>
   </section>
